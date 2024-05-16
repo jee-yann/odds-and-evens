@@ -89,8 +89,9 @@ public class Game {
       MessageCli.PRINT_END_GAME.printMessage(this.name);
     } else if (playerWins < aiWins) {
       MessageCli.PRINT_END_GAME.printMessage("HAL-9000");
-    } 
-
+    } else {
+      MessageCli.PRINT_END_GAME_TIE.printMessage();
+    }
 
     this.name = null;
   }
