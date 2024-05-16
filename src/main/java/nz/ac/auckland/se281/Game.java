@@ -11,7 +11,9 @@ public class Game {
     MessageCli.WELCOME_PLAYER.printMessage(options[0]);
   }
 
-  public void play() {}
+  public void play() {
+    MessageCli.START_ROUND.printMessage("1");
+  }
 
   public void endGame() {}
 
