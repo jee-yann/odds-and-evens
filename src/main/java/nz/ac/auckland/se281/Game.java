@@ -12,6 +12,7 @@ public class Game {
   private int round;
   private Choice choice;
   private AI opponent;
+  private String winner;
   List<Choice> history = new ArrayList<>();
 
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
@@ -38,7 +39,7 @@ public class Game {
     }
     int humanMove = Integer.parseInt(input);
     
-    int aiMove = opponent.getMove(history); // CHECK THIS OPPO
+    int aiMove = opponent.getMove(history, winner);
     String aiName = "HAL-9000";
 
     MessageCli.PRINT_INFO_HAND.printMessage(this.name, input);
@@ -46,12 +47,12 @@ public class Game {
 
 
     int sum = humanMove + aiMove;
-    String winner;
     if ((Utils.isEven(sum) && choice == Choice.EVEN) || 
         (Utils.isOdd(sum) && choice == Choice.ODD)) {
-      winner = this.name;
+      
+      this.winner = this.name;
     } else {
-      winner = aiName;
+      this.winner = aiName;
     }
 
     String evenOrOdd;
@@ -68,6 +69,7 @@ public class Game {
     } else {
       history.add (Choice.ODD);
     }
+
 
     MessageCli.PRINT_OUTCOME_ROUND.printMessage(Integer.toString(sum), evenOrOdd, winner);
     round++;

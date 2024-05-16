@@ -20,7 +20,7 @@ public abstract class AI {
     this.strategy = strategy;
   }
   
-  public int getMove(List<Choice> history) {
+  public int getMove(List<Choice> history, String winner) {
     return this.strategy.getNumber(history, choice);
   }
 }
