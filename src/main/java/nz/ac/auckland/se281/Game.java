@@ -31,6 +31,7 @@ public class Game {
   }
 
   public void play() {
+    // Check if a name has been inputted which signals a runing game.
     if (this.name == null) {
       MessageCli.GAME_NOT_STARTED.printMessage();
       return;
@@ -85,6 +86,8 @@ public class Game {
 
   public void endGame() {
     this.showStats();
+
+    // Print the appropriate message depending on who won.
     if (playerWins > aiWins) {
       MessageCli.PRINT_END_GAME.printMessage(this.name);
     } else if (playerWins < aiWins) {
@@ -93,6 +96,7 @@ public class Game {
       MessageCli.PRINT_END_GAME_TIE.printMessage();
     }
 
+    // Reset name to null to signal end of game.
     this.name = null;
   }
 
