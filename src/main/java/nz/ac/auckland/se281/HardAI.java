@@ -19,9 +19,10 @@ public class HardAI extends AI {
       if (winner != "HAL-9000") {
         if (this.strategy instanceof RandomStrategy) {
           this.setStrategy(new TopStrategy());
+        } else {
+          this.setStrategy(new RandomStrategy());
         }
       }
-      this.setStrategy(new TopStrategy());
     }
     rounds++;
     return this.strategy.getNumber(history, this.choice);
