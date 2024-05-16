@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.ArrayList;
 
 public abstract class AI {
-  public Strategy strategy;
-  public Choice choice;
-  public int rounds;
+  private Strategy strategy;
+  private Choice choice;
+  private int rounds;
 
   public AI(Strategy strategy, Choice choice) {
     this.strategy = strategy;

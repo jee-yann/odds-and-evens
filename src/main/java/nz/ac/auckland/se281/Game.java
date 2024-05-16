@@ -15,7 +15,7 @@ public class Game {
   private String winner;
   private int playerWins;
   private int aiWins;
-  List<Choice> history = new ArrayList<>();
+  private List<Choice> history = new ArrayList<>();
 
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
     // the first element of options[0]; is the name of the player
