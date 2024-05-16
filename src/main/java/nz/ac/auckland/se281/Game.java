@@ -12,7 +12,7 @@ public class Game {
   private int round;
   private Choice choice;
   private AI opponent;
-  private String winner = "";
+  private String winner;
   List<Choice> history = new ArrayList<>();
 
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
@@ -27,7 +27,10 @@ public class Game {
   }
 
   public void play() {
-    
+    if (this.name == null) {
+      MessageCli.GAME_NOT_STARTED.printMessage();
+      return;
+    }
 
     MessageCli.START_ROUND.printMessage(Integer.toString(this.round));
     MessageCli.ASK_INPUT.printMessage();
