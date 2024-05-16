@@ -8,11 +8,13 @@ public class Game {
   
   private String name;
   private int round = 1;
+  private Difficulty difficulty;
 
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
     // the first element of options[0]; is the name of the player
     MessageCli.WELCOME_PLAYER.printMessage(options[0]);
     this.name = options[0];
+    this.difficulty = difficulty;
   }
 
   public void play() {
@@ -24,6 +26,12 @@ public class Game {
       MessageCli.ASK_INPUT.printMessage();
       input = Utils.scanner.nextLine();
     }
+    
+    AI ai = AIFactory.createAI(difficulty);
+    
+    MessageCli.PRINT_INFO_HAND.printMessage("HAL-9000", Integer.toString(ai.getMove()));
+
+
     MessageCli.PRINT_INFO_HAND.printMessage(this.name, input);
 
     round++;
