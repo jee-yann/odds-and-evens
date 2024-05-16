@@ -13,6 +13,8 @@ public class Game {
   private Choice choice;
   private AI opponent;
   private String winner;
+  private int playerWins;
+  private int aiWins;
   List<Choice> history = new ArrayList<>();
 
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
@@ -23,6 +25,8 @@ public class Game {
     this.choice = choice;
     AI ai = AIFactory.createAI(difficulty, choice);
     this.opponent = ai;
+    this.playerWins = 0;
+    this.aiWins = 0;
     history.clear();
   }
 
@@ -52,10 +56,11 @@ public class Game {
     int sum = humanMove + aiMove;
     if ((Utils.isEven(sum) && choice == Choice.EVEN) || 
         (Utils.isOdd(sum) && choice == Choice.ODD)) {
-      
       this.winner = this.name;
+      playerWins++;
     } else {
       this.winner = aiName;
+      aiWins++;
     }
 
     String evenOrOdd;
@@ -78,7 +83,12 @@ public class Game {
     round++;
   }
 
-  public void endGame() {}
+  public void endGame() {
 
-  public void showStats() {}
+  }
+
+  public void showStats() {
+    MessageCli.PRINT_PLAYER_WINS.printMessage(this.name, Integer.toString(this.playerWins), Integer.toString(this.aiWins));
+    MessageCli.PRINT_PLAYER_WINS.printMessage("HAL-9000", Integer.toString(this.aiWins), Integer.toString(this.playerWins));
+  }
 }
