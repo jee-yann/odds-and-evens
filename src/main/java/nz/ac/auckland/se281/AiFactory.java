@@ -4,16 +4,16 @@ package nz.ac.auckland.se281;
 import nz.ac.auckland.se281.Main.Difficulty;
 import nz.ac.auckland.se281.Main.Choice;
 
-public class AIFactory {
-  public static AI createAI(Difficulty difficulty, Choice choice) {
+public class AiFactory {
+  public static Ai createAi(Difficulty difficulty, Choice choice) {
 
     switch(difficulty) {
       case EASY:
-        return new EasyAI(choice);
+        return new EasyAi(choice);
       case MEDIUM:
-        return new MediumAI(choice);
+        return new MediumAi(choice);
       case HARD:
-        return new HardAI(choice);
+        return new HardAi(choice);
       default:
         return null;
     }

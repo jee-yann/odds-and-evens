@@ -5,12 +5,12 @@ import nz.ac.auckland.se281.Main.Choice;
 import java.util.List;
 import java.util.ArrayList;
 
-public abstract class AI {
+public abstract class Ai {
   private Strategy strategy;
   private Choice choice;
   private int rounds;
 
-  public AI(Strategy strategy, Choice choice) {
+  public Ai(Strategy strategy, Choice choice) {
     this.strategy = strategy;
     this.choice = choice;
     this.rounds = 0;
@@ -22,5 +22,21 @@ public abstract class AI {
   
   public int getMove(List<Choice> history, String winner) {
     return this.strategy.getNumber(history, choice);
+  }
+
+  public int getRounds() {
+    return this.rounds;
+  }
+
+  public void incrementRounds() {
+    rounds++;
+  }
+
+  public Choice getChoice() {
+    return this.choice;
+  }
+
+  public Strategy getStrategy() {
+    return this.strategy;
   }
 }

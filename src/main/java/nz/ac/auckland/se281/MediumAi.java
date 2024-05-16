@@ -6,8 +6,8 @@ import nz.ac.auckland.se281.Main.Choice;
 import java.util.List;
 import java.util.ArrayList;
 
-public class MediumAI extends AI {
-  public MediumAI(Choice choice) {
+public class MediumAi extends Ai {
+  public MediumAi(Choice choice) {
     super(new RandomStrategy(), choice);
   }
 
@@ -15,10 +15,10 @@ public class MediumAI extends AI {
   public int getMove(List<Choice> history, String winner) {
 
     // Check if round 3, if so, switch from random strategy to top strategy.
-    if (rounds == 3) {
+    if (this.getRounds() == 3) {
       this.setStrategy(new TopStrategy());
     }
-    rounds++;
-    return this.strategy.getNumber(history, this.choice);
+    incrementRounds();
+    return this.getStrategy().getNumber(history, this.getChoice());
   }
 }

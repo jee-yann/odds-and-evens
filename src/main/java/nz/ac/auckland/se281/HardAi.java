@@ -6,8 +6,8 @@ import nz.ac.auckland.se281.Main.Choice;
 import java.util.List;
 import java.util.ArrayList;
 
-public class HardAI extends AI {
-  public HardAI(Choice choice) {
+public class HardAi extends Ai {
+  public HardAi(Choice choice) {
     super(new RandomStrategy(), choice);
   }
 
@@ -15,16 +15,16 @@ public class HardAI extends AI {
   public int getMove(List<Choice> history, String winner) {
 
     // Check if round 3 or above, if so, start cycling strategies.
-    if (rounds >= 3) {
+    if (this.getRounds() >= 3) {
       if (winner != "HAL-9000" && winner != "") {
-        if (this.strategy instanceof RandomStrategy) {
+        if (this.getStrategy() instanceof RandomStrategy) {
           this.setStrategy(new TopStrategy());
         } else {
           this.setStrategy(new RandomStrategy());
         }
       }
     }
-    rounds++;
-    return this.strategy.getNumber(history, this.choice);
+    incrementRounds();
+    return this.getStrategy().getNumber(history, this.getChoice());
   }
 }

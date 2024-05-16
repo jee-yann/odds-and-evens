@@ -11,7 +11,7 @@ public class Game {
   private String name;
   private int round;
   private Choice choice;
-  private AI opponent;
+  private Ai opponent;
   private String winner;
   private int playerWins;
   private int aiWins;
@@ -23,7 +23,7 @@ public class Game {
     this.name = options[0];
     this.round = 1;
     this.choice = choice;
-    AI ai = AIFactory.createAI(difficulty, choice);
+    Ai ai = AiFactory.createAi(difficulty, choice);
     this.opponent = ai;
     this.playerWins = 0;
     this.aiWins = 0;
