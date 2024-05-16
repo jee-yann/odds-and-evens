@@ -12,7 +12,7 @@ public class Game {
   private int round;
   private Choice choice;
   private AI opponent;
-  private String winner;
+  private String winner = "";
   List<Choice> history = new ArrayList<>();
 
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {

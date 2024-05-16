@@ -16,7 +16,7 @@ public class HardAI extends AI {
 
     // Check if round 3 or above, if so, start cycling strategies.
     if (rounds >= 3) {
-      if (winner != "HAL-9000") {
+      if (winner != "HAL-9000" && winner != "") {
         if (this.strategy instanceof RandomStrategy) {
           this.setStrategy(new TopStrategy());
         } else {
