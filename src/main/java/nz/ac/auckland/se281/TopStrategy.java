@@ -23,9 +23,9 @@ public class TopStrategy implements Strategy {
     }
 
     if (count > (int) history.size() / 2) {
-      return Utils.getRandomEvenNumber();
-    } else if (count < (int) history.size() / 2) {
       return Utils.getRandomOddNumber();
+    } else if (count < (int) history.size() / 2) {
+      return Utils.getRandomEvenNumber();
     } else {
       return Utils.getRandomNumberRange(0, 5);
     }
