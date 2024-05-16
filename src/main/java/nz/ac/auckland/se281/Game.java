@@ -88,6 +88,10 @@ public class Game {
   }
 
   public void showStats() {
+    if (this.name == null) {
+      MessageCli.GAME_NOT_STARTED.printMessage();
+      return;
+    }
     MessageCli.PRINT_PLAYER_WINS.printMessage(this.name, Integer.toString(this.playerWins), Integer.toString(this.aiWins));
     MessageCli.PRINT_PLAYER_WINS.printMessage("HAL-9000", Integer.toString(this.aiWins), Integer.toString(this.playerWins));
   }
