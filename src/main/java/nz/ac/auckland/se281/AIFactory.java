@@ -10,6 +10,8 @@ public class AIFactory {
     switch(difficulty) {
       case EASY:
         return new EasyAI(choice);
+      case MEDIUM:
+        return new MediumAI(choice);
       default:
         return null;
     }
