@@ -7,6 +7,7 @@ import nz.ac.auckland.se281.Main.Difficulty;
 public class Game {
   
   private String name;
+  private int round = 1;
 
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
     // the first element of options[0]; is the name of the player
@@ -15,7 +16,7 @@ public class Game {
   }
 
   public void play() {
-    MessageCli.START_ROUND.printMessage("1");
+    MessageCli.START_ROUND.printMessage(Integer.toString(this.round));
     MessageCli.ASK_INPUT.printMessage();
     String input = Utils.scanner.nextLine();
     while (!(Utils.isInteger(input)) || (Integer.parseInt(input) < 0 || Integer.parseInt(input) > 5)) {
@@ -24,6 +25,9 @@ public class Game {
       input = Utils.scanner.nextLine();
     }
     MessageCli.PRINT_INFO_HAND.printMessage(this.name, input);
+
+    round++;
+
   }
 
   public void endGame() {}
