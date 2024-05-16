@@ -3,7 +3,6 @@ package nz.ac.auckland.se281;
 
 import nz.ac.auckland.se281.Main.Choice;
 import java.util.List;
-import java.util.ArrayList;
 
 public abstract class Ai {
   private Strategy strategy;
