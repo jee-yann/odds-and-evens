@@ -84,7 +84,15 @@ public class Game {
   }
 
   public void endGame() {
+    this.showStats();
+    if (playerWins > aiWins) {
+      MessageCli.PRINT_END_GAME.printMessage(this.name);
+    } else if (playerWins < aiWins) {
+      MessageCli.PRINT_END_GAME.printMessage("HAL-9000");
+    } 
 
+
+    this.name = null;
   }
 
   public void showStats() {
