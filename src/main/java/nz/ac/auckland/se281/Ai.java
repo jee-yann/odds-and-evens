@@ -21,7 +21,7 @@ public abstract class Ai {
   public Ai(Strategy strategy, Choice choice) {
     this.strategy = strategy;
     this.choice = choice;
-    this.rounds = 0;
+    this.rounds = 1;
   }
 
   public void setStrategy(Strategy strategy) {

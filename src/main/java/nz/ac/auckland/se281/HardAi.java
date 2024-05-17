@@ -15,10 +15,9 @@ public class HardAi extends Ai {
 
   @Override
   public int getMove(List<Choice> history, String winner) {
-
     // Check if round 3 or above, if so, start cycling strategies.
     if (this.getRounds() >= 3) {
-      if (winner != "HAL-9000" && winner != "") {
+      if (winner != "HAL-9000") {
         if (this.getStrategy() instanceof RandomStrategy) {
           this.setStrategy(new TopStrategy());
         } else {
