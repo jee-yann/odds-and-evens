@@ -1,9 +1,9 @@
 package nz.ac.auckland.se281;
 
+import java.util.ArrayList;
+import java.util.List;
 import nz.ac.auckland.se281.Main.Choice;
 import nz.ac.auckland.se281.Main.Difficulty;
-import java.util.List;
-import java.util.ArrayList;
 
 /** This class represents the Game is the main entry point. */
 public class Game {
