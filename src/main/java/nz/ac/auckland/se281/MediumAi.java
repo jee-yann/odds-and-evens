@@ -16,8 +16,8 @@ public class MediumAi extends Ai {
   @Override
   public int getMove(List<Choice> history, String winner) {
 
-    // Check if round 3, if so, switch from random strategy to top strategy.
-    if (this.getRounds() == 3) {
+    // Check if it's round 4, if so, switch from random strategy to top strategy.
+    if (this.getRounds() == 4) {
       this.setStrategy(new TopStrategy());
     }
     incrementRounds();
