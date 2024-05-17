@@ -4,7 +4,10 @@ package nz.ac.auckland.se281;
 import java.util.List;
 import nz.ac.auckland.se281.Main.Choice;
 
-
+/**
+ * Represents a strategy in which a decision is based on the history of the
+ * opponent's moves and what they are most likely to do.
+ */
 public class TopStrategy implements Strategy {
 
 

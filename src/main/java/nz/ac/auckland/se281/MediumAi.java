@@ -4,6 +4,10 @@ package nz.ac.auckland.se281;
 import java.util.List;
 import nz.ac.auckland.se281.Main.Choice;
 
+/**
+ * Medium difficulty AI that samples the first few user moves then
+ * switches to top strategy after 3 rounds.
+ */
 public class MediumAi extends Ai {
   public MediumAi(Choice choice) {
     super(new RandomStrategy(), choice);

@@ -4,6 +4,9 @@ package nz.ac.auckland.se281;
 import nz.ac.auckland.se281.Main.Difficulty;
 import nz.ac.auckland.se281.Main.Choice;
 
+/**
+ * Factory OOP design where AI's of different difficulties can be created.
+ */
 public class AiFactory {
   public static Ai createAi(Difficulty difficulty, Choice choice) {
 

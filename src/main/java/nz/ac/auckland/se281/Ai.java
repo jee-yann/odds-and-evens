@@ -4,6 +4,9 @@ package nz.ac.auckland.se281;
 import java.util.List;
 import nz.ac.auckland.se281.Main.Choice;
 
+/**
+ * A CPU player that makes moves and can have adjusted difficulties.
+ */
 public abstract class Ai {
   private Strategy strategy;
   private Choice choice;

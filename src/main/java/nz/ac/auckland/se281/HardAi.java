@@ -5,6 +5,9 @@ package nz.ac.auckland.se281;
 import java.util.List;
 import nz.ac.auckland.se281.Main.Choice;
 
+/**
+ * An AI that adapts and adjusts their strategy depending on opponent's playstlye.
+ */
 public class HardAi extends Ai {
   public HardAi(Choice choice) {
     super(new RandomStrategy(), choice);
