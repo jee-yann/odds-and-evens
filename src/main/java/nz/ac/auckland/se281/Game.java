@@ -17,6 +17,10 @@ public class Game {
   private int aiWins;
   private List<Choice> history = new ArrayList<>();
 
+  /**
+   * Method newGame creates a new game against a certain instance of AI while making sure all
+   * running statistics from the previous game is wiped.
+   */
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
     // the first element of options[0]; is the name of the player
     MessageCli.WELCOME_PLAYER.printMessage(options[0]);
@@ -30,6 +34,9 @@ public class Game {
     history.clear();
   }
 
+  /**
+   * Method play simulates a round of the odd or even game against the AI.
+   */
   public void play() {
     // Check if a name has been inputted which signals a runing game.
     if (this.name == null) {
@@ -84,6 +91,9 @@ public class Game {
     round++;
   }
 
+  /**
+   * Method endGame ends the current game that the user is on and resets and running statistic.
+   */
   public void endGame() {
     this.showStats();
 
@@ -100,6 +110,9 @@ public class Game {
     this.name = null;
   }
 
+  /**
+   * method showStats outputs the current stats of the round to the user.
+   */
   public void showStats() {
     if (this.name == null) {
       MessageCli.GAME_NOT_STARTED.printMessage();

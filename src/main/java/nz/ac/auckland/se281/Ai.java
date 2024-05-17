@@ -12,6 +12,12 @@ public abstract class Ai {
   private Choice choice;
   private int rounds;
 
+  /**
+   * Constructs a new AI with specified strategy and winning choice
+   * 
+   * @param strategy strategy to be used by the AI
+   * @param choice choice in whether the AI needs EVEN or ODD to win.
+   */
   public Ai(Strategy strategy, Choice choice) {
     this.strategy = strategy;
     this.choice = choice;
